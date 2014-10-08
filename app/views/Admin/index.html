@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+    <title>#{get 'title' /}</title>
+    <meta charset="${_response_encoding}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
+
+#{get 'moreStyles' /}
+    <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/bootstrap.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+#{get 'moreScripts' /}
 </head>
 <body>
-    <div id="header">
-        <div id="logo">
-            TeachAndStudy <span>administration</span>
-        </div>
-        <ul id="tools">
-            <li>
-                <a href="@{Secure.logout()}">Log out</a>
-            </li>
-        </ul>
+<header>
+    <div id="logo"></div>
+    <ul>
+        <li>Главная</li>
+        <li>Про нас</li>
+        <li>Про проект</li>
+    </ul>
+    <div class="login">
+        <a href="@{Secure.logout()}">Log out</a>
     </div>
+</header>
+<div class="main_block">
+    <div class="main_text">
+        <h1>Новое слово в обучении</h1>
+    </div>
+    <div class="button_block">
+        <div class="button1">
+            <a href="#">Начать как студент</a>
+        </div>
+        <div class="button2">
+            <a href="#">Начать как учитель</a>
+        </div>
+        <div class="button2">
+            <a href="#">Начать как организация</a>
+        </div>
+    </div>
+</div>
     <h1>You logged in!</h1>
 </body>
 </html>
+
+
